@@ -117,19 +117,19 @@ namespace eTickets.Data
                         new Producer()
                         {
                             FullName = "Producer 3",
-                            Bio = "This is the Bio of the second actor",
+                            Bio = "This is the Bio of the third actor",
                             ProfilePictureURL = "http://dotnethow.net/images/producers/producer-3.jpeg"
                         },
                         new Producer()
                         {
                             FullName = "Producer 4",
-                            Bio = "This is the Bio of the second actor",
+                            Bio = "This is the Bio of the fourth actor",
                             ProfilePictureURL = "http://dotnethow.net/images/producers/producer-4.jpeg"
                         },
                         new Producer()
                         {
                             FullName = "Producer 5",
-                            Bio = "This is the Bio of the second actor",
+                            Bio = "This is the Bio of the fifth actor",
                             ProfilePictureURL = "http://dotnethow.net/images/producers/producer-5.jpeg"
                         }
                     });
