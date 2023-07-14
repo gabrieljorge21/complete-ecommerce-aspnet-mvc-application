@@ -1,13 +1,13 @@
-name: Build and deploy .NET Core application to Web App etickets-gabrieltest
+name: Build and deploy .NET Core application to Web App deploytestetickets
 on:
   push:
     branches:
     - main
 env:
-  AZURE_WEBAPP_NAME: etickets-gabrieltest
+  AZURE_WEBAPP_NAME: deploytestetickets
   AZURE_WEBAPP_PACKAGE_PATH: .\published
   CONFIGURATION: Release
-  DOTNET_CORE_VERSION: 5.0.x
+  DOTNET_CORE_VERSION: 6.0.x
   WORKING_DIRECTORY: .
 jobs:
   build:
@@ -15,9 +15,8 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Setup .NET SDK
-      uses: actions/setup-dotnet@v1.8.0
+      uses: actions/setup-dotnet@v3
       with:
-        include-prerelease: True
         dotnet-version: ${{ env.DOTNET_CORE_VERSION }}
     - name: Restore
       run: dotnet restore "${{ env.WORKING_DIRECTORY }}"
@@ -45,5 +44,5 @@ jobs:
       uses: azure/webapps-deploy@v2
       with:
         app-name: ${{ env.AZURE_WEBAPP_NAME }}
-        publish-profile: ${{ secrets.etickets_gabrieltest_B693 }}
+        publish-profile: ${{ secrets.deploytestetickets_6B17 }}
         package: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
