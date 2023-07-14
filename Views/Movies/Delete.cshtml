@@ -73,13 +73,16 @@
                 <div class="col-md-12">
                     <div class="card-footer">
                         <p class="card-text">
-                            <a class="btn btn-outline-danger" asp-action="Delete" asp-route-id="@Model.Id"><i class="bi bi-trash"></i></a>
+                            <form asp-action="DeleteConfirmed">
+                                <input type="hidden" asp-for="Id" />
+                                <input type="submit" value="Delete" class="btn btn-danger float-right" />
+                            </form>
                             <a class="btn btn-outline-primary float-right" asp-action="Index">
                                 Back to List
                             </a>
                             <a class="btn btn-success text-white  @((DateTime.Now > Model.EndDate) ? "disabled" : "")"
-                               @*asp-controller="Orders"
-                               asp-action="AddItemToShoppingCart"*@ asp-route-id="@Model.Id"><i class="bi bi-cart-plus"></i> Add to Cart (Price @Model.Price.ToString("c"))</a>
+                            @*asp-controller="Orders"
+                            asp-action="AddItemToShoppingCart"*@ asp-route-id="@Model.Id"><i class="bi bi-cart-plus"></i> Add to Cart (Price @Model.Price.ToString("c"))</a>
                         </p>
                     </div>
                 </div>
